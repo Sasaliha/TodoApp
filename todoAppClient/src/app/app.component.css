@@ -1,0 +1,145 @@
+/* Temel sayfa stilleri */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+  }
+  
+  /* Üst başlık stilleri */
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+  
+  /* Ana todo container'ı */
+  .todo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+  }
+  
+  .add-todo {
+    width: 60%; /* Genişlik artırıldı */
+    border: none;
+    border-bottom: 2px solid #007BFF; /* Alt çizgi eklendi */
+    padding: 10px;
+    font-size: 16px;
+    background-color: transparent;
+    transition: border-color 0.3s;
+    margin-right: 5px;
+  }
+  
+  .add-todo:focus {
+    border-color: #0056b3;
+  }
+  
+  .btn-add {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-add:hover {
+    background-color: #0056b3;
+  }
+  
+  .lists {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px auto;
+    list-style: none;
+  }
+  
+  /* Todo ve Done container'ları */
+  .example-container {
+    background-color: #fff;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 20px;
+    width: 300px;
+    margin: 10px;
+  }
+  
+  /* Liste başlıkları (To do ve Done) */
+  h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  /* Todo ve Done listeleri */
+  .example-list {
+    min-height: 100px;
+    border: 2px dashed #ccc;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+  /* Her öğe kutusu (örnek kutular) */
+  .example-box {
+    background-color: #69acf4;
+    color: black;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: grab;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .example-box.cdk-drag-preview {
+    opacity: 0.5;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .example-box.cdk-drag-placeholder {
+    background-color: #ddd;
+    border: 2px dashed #333;
+  }
+  
+  .example-box.cdk-drag-animating {
+    transition: transform 0.3s;
+  }
+  
+  .example-box.done-list {
+    background-color: #969494;
+    text-decoration: line-through;
+  }
+  
+  i:hover {
+    cursor: pointer;
+  }
+  
+  .editing {
+    background-color: #f1f1f1;
+  }
+  
+  .edit-input {
+    width: 90%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+  
+  .edit-btn {
+    padding: 8px 16px;
+    background-color: #0099f7;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-right: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .edit-btn:hover {
+    background-color: #007bb2;
+  }
+  

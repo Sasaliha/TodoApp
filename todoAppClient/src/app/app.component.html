@@ -1,0 +1,48 @@
+<h1>ToDo App <i class="fa-solid fa-list-check"></i></h1>
+
+<div class="todo">
+  <input (keyup.enter)="addTask()" class="add-todo" type="text" [(ngModel)]="newTask" placeholder="input the task...">
+  <button class="btn-add" (click)="addTask()" title="Add the task"><i class="fa-solid fa-file-circle-plus"></i></button>
+
+</div>
+
+<div class="lists">
+  <div class="example-container">
+    <h2>My To do List</h2>
+    <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="todo" [cdkDropListConnectedTo]="[doneList]"
+      class="example-list" (cdkDropListDropped)="drop1($event)">
+
+      <div class="example-box" *ngFor="let item of todo" cdkDrag [ngClass]="{'editing': item === selectedTask}">
+        <i *ngIf="item !== selectedTask" class="fa-regular fa-pen-to-square" (click)="editTask(item)" title="Edit the task"></i>
+        <input class="edit-input" type="text" *ngIf="item === selectedTask" [(ngModel)]="item.work">
+         <span *ngIf="item !== selectedTask">{{item.work}}</span>
+        <button *ngIf="item === selectedTask" class="edit-btn" (click)="updateTask()" title="Save the task"><i class="fa-regular fa-floppy-disk"></i></button>
+        <button *ngIf="item === selectedTask" class="edit-btn" (click)="cancelEdit()" title="Cancel the task"><i class="fa-solid fa-xmark"></i></button>
+             
+        
+        <i *ngIf="item !== selectedTask" (click)="removeTask(item.id)" class="fa-regular fa-calendar-xmark" style="float: inline-end; " title="Remove the task in your list"></i>
+        <i *ngIf="item !== selectedTask" (click)="markAsDone(item.id)" class="fa-regular fa-circle-check" style="float: inline-end;" title="Complete the task"></i>
+    </div>
+    
+   
+
+
+
+    </div>
+  </div>
+
+
+  <div class="example-container">
+    <h2>Completed Tasks</h2>
+    <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="done" [cdkDropListConnectedTo]="[todoList]"
+      class="example-list " (cdkDropListDropped)="drop2($event)">
+
+      <div class="example-box done-list" *ngFor="let item of done" cdkDrag>
+        <i (click)="markAsTodo(item.id)" class="fa-solid fa-rotate-left" title="Return the task"></i>
+        {{item.work}}
+      </div>
+      
+
+    </div>
+
+  </div>
